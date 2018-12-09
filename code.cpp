@@ -6,17 +6,17 @@ using namespace std;
 
 void photon_print(int f, int s)
 {
-    if (f == 1)
-    {
+    if (f == 1) {
         cout << "(+, ";
+
         if (s == 1)
             cout << "->) ; ";
         else
             cout << "|) ; ";
     }   
-    else
-    {
+    else {
         cout << "(x, ";
+
         if (s == 1)
             cout << "|r) ; ";
         else
@@ -31,12 +31,12 @@ default_random_engine generator;
 void Alice_0()
 {
     uniform_int_distribution <int> distribution(1, 2);
+
     auto dice = bind ( distribution, generator );
 
     cout << "Photons are generating: \n";
 
-    for (int i = 0; i < 10; i++)
-    {
+    for (int i = 0; i < 10; i++) {
         pair <int, int> photon;
 
         photon.first = dice();
@@ -46,6 +46,7 @@ void Alice_0()
 
         photon_print(photon.first, photon.second);
     }
+    
     cout << endl;
 }
 
